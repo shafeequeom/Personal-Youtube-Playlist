@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'video-detail',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class VideoDetailComponent implements OnInit {
 
   private editTitle: boolean=false;
-  constructor() { }
+  constructor(public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
   }

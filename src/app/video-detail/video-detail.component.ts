@@ -12,6 +12,8 @@ export class VideoDetailComponent implements OnInit {
 
   video: any;
   private editTitle: boolean=false;
+  private editUrl: boolean=false;
+  private editDesc: boolean=false;
   private updateVideoEvent = new EventEmitter();
   private deleteVideoEvent = new EventEmitter();
   constructor(public sanitizer: DomSanitizer) { }
@@ -25,6 +27,12 @@ export class VideoDetailComponent implements OnInit {
 
   onTitleClick(){
     this.editTitle = true;
+  }
+  onUrlClick(){
+    this.editUrl = true;
+  }
+  onDescClick(){
+    this.editDesc = true;
   }
   updateVideo() {
     this.updateVideoEvent.emit(this.video);

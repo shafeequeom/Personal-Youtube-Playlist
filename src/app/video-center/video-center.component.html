@@ -1,3 +1,4 @@
+<div class="section section-buttons">
 <div class="container">
   <div class="row">
     <div class="col-sm-9">
@@ -16,14 +17,16 @@
 					<label>Description</label>
 					<input type="text" class="form-control" name="description" ngModel>
 				</div>
-				<button type="submit" class="btn btn-success">Save</button>
+				<button type="submit" class="btn btn-outline-success btn-round">Save</button>
 			</form>
 		</div>
       <video-detail (updateVideoEvent)="onUpdateVideoEvent($event)" (deleteVideoEvent)="onDeleteVideoEvent($event)" *ngIf="selectedVideo && hidenewVideo" [video]="selectedVideo"></video-detail>
     </div>
     <div class="col-sm-3">
-      <button style="margin-bottom: 2px;" type="button" (click)="newVideo()" class="btn btn-success btn-block">+ New Video</button>
+      <button style="margin-bottom: 2px; vertical-align:center; text-align:center;" type="button" (click)="newVideo()" class="btn btn-outline-success btn-round">+ New Video</button>
+      <hr />
       <video-list [videos]="videos" (SelectVideo)="onSelectVideo($event)"></video-list>
     </div>
   </div>
+</div>
 </div>

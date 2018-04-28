@@ -35,4 +35,19 @@ router.get('/videos/:id', function(req, res){
     });
 
 });
+
+router.post('/video', function(req, res){
+    console.log('Post a video');
+    var newVideo = new Video();
+    newVideo.title = req.body.title;
+    newVideo.url = req.body.url;
+    newVideo.discription = req.body.discription;
+    newVideo.save(function(err,insertedVideo){
+        if(err){
+            console.log('Error saving video');
+        }else{
+            res.json(insertedVideo);
+        }
+    });
+});
 module.exports = router;

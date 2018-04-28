@@ -50,4 +50,25 @@ router.post('/video', function(req, res){
         }
     });
 });
+
+router.put('/video/:id', function(req, res){
+    console.log("Update Video");
+    Video.findByIdAndUpdate(req.params.id, 
+        {
+            $set: {title:req.body.title, url:req.body.url, discription:req.body.discription}
+        },
+        {
+            new: true
+        },
+        function(err, updatedVideo){
+            if(err){
+                res.send("Error updating video");
+            }else{
+                res.json(updatedVideo);
+            }
+        }
+    );
+});
+
+
 module.exports = router;
